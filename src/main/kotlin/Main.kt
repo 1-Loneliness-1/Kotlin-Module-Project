@@ -1,3 +1,6 @@
+
+val currentArchives: MutableMap<String, MutableMap<String, String>> = mutableMapOf()
+
 fun main(args: Array<String>) {
-    println("Hello World!")
+    ArchiveActivity().start()
 }
