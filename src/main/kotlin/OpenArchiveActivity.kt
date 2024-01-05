@@ -6,8 +6,8 @@ class OpenArchiveActivity {
         fun startOpenArchiveActivity(keyOfSelectedArchive: String) {
             while(true) {
                 val namesOfNotes: List<String>? = currentArchives[keyOfSelectedArchive]?.keys?.toList()
-                val elementsOfMenu: MutableList<String> = mutableListOf(" Создать заметку", " Назад к списку архивов")
-                namesOfNotes?.forEach { elementsOfMenu.add(" Посмотреть содержимое заметки \'${it}\'") }
+                val elementsOfMenu: MutableList<String> = mutableListOf("Создать заметку", "Назад к списку архивов")
+                namesOfNotes?.forEach { elementsOfMenu.add("Открыть заметку \'${it}\'") }
 
                 when(val command = getUserInput("Действия с заметками в архиве \'$keyOfSelectedArchive\':", elementsOfMenu)) {
                     "0" -> createNewNote(keyOfSelectedArchive)
