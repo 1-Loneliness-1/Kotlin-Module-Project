@@ -18,7 +18,10 @@ class Menu {
 
                 command = readln()
 
-                if (command[0].isLetter() && command.length == 1) {
+                if (command.isEmpty()) {
+                    println("Вы ничего не ввели. Пожалуйста, введите цифру от 0 до ${menuElements.size - 1}.\n")
+                    continue
+                } else if (command[0].isLetter() && command.length == 1) {
                     println("Введена буква. Пожалуйста, введите цифру от 0 до ${menuElements.size - 1}.\n")
                     continue
                 } else {
@@ -46,7 +49,7 @@ class Menu {
             while(i != obj.elementsOfCreateInterface.size - 1) {
                 println(obj.elementsOfCreateInterface[i])
                 val text = readln()
-                if (text.isNotEmpty()) {
+                if (text.isNotBlank()) {
                     nameAndContent.add(text)
                     i += 2
                 } else {
